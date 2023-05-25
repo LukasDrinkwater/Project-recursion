@@ -22,6 +22,20 @@ function fibs(num) {
 //   }
 // }
 
+let fibArray = [];
+
+function fib(fibSeq, n = 1) {
+  if (n < 3 && n != 0) {
+    fibArray.push(n);
+  }
+  if (n = 0){
+    fibArray.push(n)
+  }
+  return fibArray.push(fib( ,n - 1) + fib(,n - 2));
+}
+
+console.log(fib(21));
+
 function fib(n) {
   if (n < 3) {
     return 1;
@@ -29,4 +43,4 @@ function fib(n) {
   return fib(n - 1) + fib(n - 2);
 }
 
-console.log(fib(21));
+// console.log(fib(21));
