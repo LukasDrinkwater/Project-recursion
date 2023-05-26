@@ -12,35 +12,17 @@ function fibs(num) {
   console.log(fibNumArray);
 }
 
-// fibs(8);
-
-// function fibsRec(n) {
-//   if (n < 2) {
-//     return;
-//   } else {
-//     return fibsRec(n - 1) + fibsRec(n - 2);
-//   }
-// }
-
-let fibArray = [];
-
-function fib(fibSeq, n = 1) {
-  if (n < 3 && n != 0) {
-    fibArray.push(n);
+function fibsRec(n, fibArray = [0, 1]) {
+  if (n === 1) {
+    return [0];
+  } else if (fibArray.length >= n) {
+    return fibArray;
   }
-  if (n = 0){
-    fibArray.push(n)
-  }
-  return fibArray.push(fib( ,n - 1) + fib(,n - 2));
+  console.log(fibArray);
+  // console.log(fibArray.a);
+  return fibsRec(n, [...fibArray, fibArray.at(-1) + fibArray.at(-2)]);
+  //fibArray is getting passed back in then its adding fibArray.at(-1) + fibArray.at(-2)
+  //to the array
 }
 
-console.log(fib(21));
-
-function fib(n) {
-  if (n < 3) {
-    return 1;
-  }
-  return fib(n - 1) + fib(n - 2);
-}
-
-// console.log(fib(21));
+console.log(fibsRec(8));
